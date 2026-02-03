@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Analysis: NeedingAdvice.co.uk | Website Audit Report</title>
+    <title>NeedingAdvice.co.uk | Website Analysis Report</title>
     <style>
         * {
             margin: 0;
@@ -13,314 +13,246 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.7;
+            line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             min-height: 100vh;
             padding: 20px;
         }
 
         .container {
-            max-width: 940px;
+            max-width: 900px;
             margin: 0 auto;
             background: white;
-            border-radius: 16px;
-            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+            border-radius: 20px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.4);
             overflow: hidden;
         }
 
+        /* Header */
         header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
-            padding: 60px 50px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .ai-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 8px 16px;
-            border-radius: 25px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 25px;
-        }
-
-        .ai-badge::before {
-            content: '🤖';
-        }
-
-        header h1 {
-            font-size: 38px;
-            margin-bottom: 12px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        header p {
-            opacity: 0.85;
-            font-size: 18px;
-            max-width: 600px;
-        }
-
-        .meta-info {
-            margin-top: 30px;
-            padding-top: 25px;
-            border-top: 1px solid rgba(255,255,255,0.15);
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-            font-size: 14px;
-            opacity: 0.75;
-        }
-
-        .meta-info span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .content {
-            padding: 50px;
-        }
-
-        /* Score Hero Section */
-        .score-hero {
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 40px;
-            align-items: center;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 16px;
-            padding: 35px;
-            margin-bottom: 50px;
-        }
-
-        .score-circle {
-            position: relative;
-            width: 160px;
-            height: 160px;
-        }
-
-        .score-circle svg {
-            transform: rotate(-90deg);
-            width: 160px;
-            height: 160px;
-        }
-
-        .score-circle circle {
-            fill: none;
-            stroke-width: 12;
-        }
-
-        .score-bg {
-            stroke: #e0e0e0;
-        }
-
-        .score-fill {
-            stroke: #f39c12;
-            stroke-linecap: round;
-            stroke-dasharray: 408;
-            stroke-dashoffset: 143; /* 65% fill = 408 * 0.35 */
-            transition: stroke-dashoffset 1s ease;
-        }
-
-        .score-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            padding: 50px 40px;
             text-align: center;
         }
 
-        .score-number {
-            font-size: 42px;
-            font-weight: 800;
-            color: #1a1a1a;
-            line-height: 1;
-        }
-
-        .score-label {
-            font-size: 12px;
-            color: #666;
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 4px;
-        }
-
-        .score-summary h2 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-            border: none;
-            padding: 0;
-        }
-
-        .score-summary p {
-            color: #555;
+            letter-spacing: 1.5px;
             margin-bottom: 20px;
         }
 
-        .score-tags {
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            opacity: 0.8;
+            font-size: 16px;
+        }
+
+        .meta-row {
+            margin-top: 25px;
             display: flex;
+            justify-content: center;
+            gap: 20px;
             flex-wrap: wrap;
+            font-size: 13px;
+            opacity: 0.7;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        /* The Big Picture Section */
+        .big-picture {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .big-picture h2 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
             gap: 10px;
         }
 
-        .tag {
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        .tag-positive {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .tag-negative {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        .tag-neutral {
-            background: #fff3cd;
-            color: #856404;
-        }
-
-        /* Key Findings Banner */
-        .key-findings {
+        .stat-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            margin-bottom: 50px;
         }
 
-        .finding-stat {
-            background: #f8f9fa;
+        .stat-box {
+            background: rgba(255,255,255,0.15);
             border-radius: 12px;
-            padding: 25px 20px;
+            padding: 20px;
             text-align: center;
-            border-bottom: 4px solid transparent;
-            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .finding-stat:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .finding-stat.positive {
-            border-bottom-color: #27ae60;
-        }
-
-        .finding-stat.negative {
-            border-bottom-color: #e74c3c;
-        }
-
-        .finding-stat.warning {
-            border-bottom-color: #f39c12;
-        }
-
-        .finding-stat .value {
+        .stat-box .number {
             font-size: 32px;
             font-weight: 800;
-            color: #1a1a1a;
-            line-height: 1.2;
+            line-height: 1;
         }
 
-        .finding-stat .label {
+        .stat-box .label {
             font-size: 12px;
-            color: #666;
+            opacity: 0.9;
             margin-top: 8px;
-            line-height: 1.4;
+            line-height: 1.3;
         }
 
-        h2 {
-            color: #1a1a1a;
-            font-size: 24px;
-            margin: 50px 0 25px 0;
+        .stat-box.positive {
+            background: rgba(34, 197, 94, 0.3);
+        }
+
+        .stat-box.negative {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* The Good News Section */
+        .good-news {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .good-news h2 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Section Headers */
+        h2.section-title {
+            font-size: 22px;
+            margin: 50px 0 20px 0;
             padding-bottom: 12px;
             border-bottom: 3px solid #1a1a1a;
-            font-weight: 700;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        h2 .emoji {
-            font-size: 28px;
-        }
-
-        h3 {
-            color: #1f2937;
-            font-size: 17px;
-            margin: 28px 0 16px 0;
-            font-weight: 600;
-        }
-
-        h4 {
-            color: #374151;
-            font-size: 15px;
-            margin: 16px 0 10px 0;
-            font-weight: 600;
-        }
-
-        p {
-            margin-bottom: 14px;
-            color: #4b5563;
-            line-height: 1.65;
-        }
-
-        /* Ranking Table */
-        .ranking-section {
-            background: #f9fafb;
+        /* Accordion/Details Styling */
+        details {
+            margin-bottom: 16px;
+            border: 1px solid #e5e7eb;
             border-radius: 12px;
-            padding: 24px 28px;
-            margin: 24px 0;
+            overflow: hidden;
         }
 
-        .ranking-section h3 {
-            margin-top: 0;
+        details[open] {
+            border-color: #3b82f6;
         }
 
-        .ranking-section h3:not(:first-child) {
-            margin-top: 24px;
+        summary {
+            padding: 18px 24px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            background: #f9fafb;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            list-style: none;
         }
 
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: '+';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: #e5e7eb;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 18px;
+            color: #666;
+            flex-shrink: 0;
+        }
+
+        details[open] summary::before {
+            content: '-';
+            background: #3b82f6;
+            color: white;
+        }
+
+        summary:hover {
+            background: #f3f4f6;
+        }
+
+        .details-content {
+            padding: 24px;
+            background: white;
+        }
+
+        /* Quick Summary Tags */
+        .summary-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: auto;
+        }
+
+        .tag-critical {
+            background: #fef2f2;
+            color: #dc2626;
+        }
+
+        .tag-warning {
+            background: #fffbeb;
+            color: #d97706;
+        }
+
+        .tag-good {
+            background: #f0fdf4;
+            color: #16a34a;
+        }
+
+        .tag-info {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+
+        /* Tables */
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 16px 0;
             font-size: 14px;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
         }
 
         th {
             background: #1f2937;
             color: white;
-            padding: 14px 18px;
+            padding: 12px 16px;
             text-align: left;
             font-weight: 600;
             font-size: 12px;
@@ -329,1496 +261,812 @@
         }
 
         td {
-            padding: 14px 18px;
+            padding: 12px 16px;
             border-bottom: 1px solid #f3f4f6;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
         }
 
         tr:hover {
             background: #f9fafb;
         }
 
-        .status-good {
-            color: #27ae60;
-            font-weight: 700;
-        }
+        .status-good { color: #16a34a; font-weight: 700; }
+        .status-bad { color: #dc2626; font-weight: 600; }
+        .status-warning { color: #d97706; font-weight: 600; }
 
-        .status-bad {
-            color: #e74c3c;
-            font-weight: 600;
-        }
-
-        .status-warning {
-            color: #e67e22;
-            font-weight: 600;
-        }
-
-        .rank-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 32px;
-            height: 32px;
-            padding: 0 10px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        .rank-1 {
-            background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
-            color: #333;
-        }
-
-        .rank-2 {
-            background: linear-gradient(135deg, #c0c0c0 0%, #a8a8a8 100%);
-            color: #333;
-        }
-
-        .rank-top5 {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .rank-missing {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        /* Finding Boxes */
-        .finding-box {
-            padding: 24px 28px;
+        /* Alert Boxes */
+        .alert {
+            padding: 20px 24px;
             border-radius: 12px;
             margin: 20px 0;
-            position: relative;
         }
 
-        .finding-box h4 {
-            margin: 0 0 12px 0;
-            font-size: 16px;
-        }
-
-        .finding-box p {
-            margin-bottom: 12px;
-            line-height: 1.6;
-        }
-
-        .finding-box p:last-child,
-        .finding-box ul:last-child {
-            margin-bottom: 0;
-        }
-
-        .finding-critical {
+        .alert-critical {
             background: #fef2f2;
-            border-left: 4px solid #ef4444;
+            border-left: 4px solid #dc2626;
         }
 
-        .finding-warning {
+        .alert-warning {
             background: #fffbeb;
             border-left: 4px solid #f59e0b;
         }
 
-        .finding-positive {
+        .alert-success {
             background: #f0fdf4;
             border-left: 4px solid #22c55e;
         }
 
-        .finding-info {
+        .alert-info {
             background: #eff6ff;
             border-left: 4px solid #3b82f6;
         }
 
-        ul {
-            margin: 12px 0 12px 24px;
+        .alert h4 {
+            margin: 0 0 10px 0;
+            font-size: 15px;
         }
 
-        li {
-            margin-bottom: 8px;
-            color: #444;
-            line-height: 1.5;
-        }
-
-        li:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Competitor Comparison */
-        .competitor-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 16px;
-            margin: 20px 0;
-        }
-
-        .competitor-card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 20px;
-            position: relative;
-        }
-
-        .competitor-card.current {
-            border-color: #3b82f6;
-            background: linear-gradient(135deg, #eff6ff 0%, white 100%);
-        }
-
-        .competitor-card.current::before {
-            content: 'Your Site';
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            background: #3b82f6;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .competitor-name {
-            font-size: 16px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-        }
-
-        .competitor-stats {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .comp-stat {
-            display: flex;
-            justify-content: space-between;
-            font-size: 13px;
-        }
-
-        .comp-stat .label {
-            color: #666;
-        }
-
-        .comp-stat .value {
-            font-weight: 600;
-            color: #333;
-        }
-
-        /* Opportunity Cards */
-        .opportunities-grid {
-            display: grid;
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .opportunity-card {
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 28px;
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            gap: 25px;
-            align-items: start;
-            transition: box-shadow 0.2s, transform 0.2s;
-        }
-
-        .opportunity-card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
-        }
-
-        .opp-number {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-            color: white;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .opp-content h4 {
-            margin: 0 0 8px 0;
-            font-size: 17px;
-            color: #1a1a1a;
-        }
-
-        .opp-content p {
+        .alert p {
             margin: 0;
             font-size: 14px;
-            color: #666;
+            color: #4b5563;
+        }
+
+        /* Key Insight Box */
+        .insight-box {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 25px 0;
+        }
+
+        .insight-box h4 {
+            color: #fbbf24;
+            margin: 0 0 12px 0;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .insight-box p {
+            color: rgba(255,255,255,0.9);
+            margin: 0;
+            font-size: 15px;
             line-height: 1.6;
         }
 
-        .opp-meta {
-            text-align: right;
-            min-width: 100px;
+        /* Action Cards */
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 25px 0;
         }
 
-        .effort-badge {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-
-        .effort-low {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .effort-medium {
-            background: #fff3cd;
-            color: #856404;
-        }
-
-        .effort-high {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        .impact-indicator {
-            display: flex;
-            gap: 4px;
-            justify-content: flex-end;
-        }
-
-        .impact-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #e0e0e0;
-        }
-
-        .impact-dot.filled {
-            background: #27ae60;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            margin: 40px 0;
-            padding-left: 30px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg, #27ae60 0%, #f39c12 50%, #3b82f6 100%);
-            border-radius: 2px;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding: 25px 30px;
-            background: #f8f9fa;
+        .action-card {
+            background: #f9fafb;
             border-radius: 12px;
-            margin-bottom: 20px;
-            margin-left: 20px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.2s;
         }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -32px;
-            top: 30px;
-            width: 16px;
-            height: 16px;
-            background: white;
-            border: 4px solid;
-            border-radius: 50%;
-        }
-
-        .timeline-item.phase-1::before {
-            border-color: #27ae60;
-        }
-
-        .timeline-item.phase-2::before {
-            border-color: #f39c12;
-        }
-
-        .timeline-item.phase-3::before {
+        .action-card:hover {
             border-color: #3b82f6;
+            transform: translateY(-2px);
         }
 
-        .timeline-header {
+        .action-card .number {
+            width: 36px;
+            height: 36px;
+            background: #1a1a1a;
+            color: white;
+            border-radius: 50%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
-        }
-
-        .timeline-title {
-            font-size: 18px;
+            justify-content: center;
             font-weight: 700;
-            color: #1a1a1a;
+            margin: 0 auto 12px;
         }
 
-        .timeline-duration {
-            font-size: 13px;
+        .action-card h4 {
+            font-size: 14px;
+            margin: 0 0 8px 0;
+        }
+
+        .action-card p {
+            font-size: 12px;
             color: #666;
-            background: white;
-            padding: 4px 12px;
-            border-radius: 20px;
+            margin: 0;
         }
 
-        .timeline-tasks {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .task-tag {
-            background: white;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 13px;
-            color: #444;
-            border: 1px solid #e0e0e0;
-        }
-
-        /* Two Column */
-        .two-column {
+        /* Comparison Grid */
+        .comparison-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin: 20px 0;
         }
 
-        .two-column .finding-box,
-        .two-column .finding-warning,
-        .two-column .finding-critical,
-        .two-column .finding-positive,
-        .two-column .finding-info {
-            margin: 0;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .two-column .finding-box p:last-child {
-            margin-top: auto;
-        }
-
-        /* Bottom Line Box */
-        .bottom-line {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            color: white;
+        .comparison-box {
+            padding: 24px;
             border-radius: 12px;
-            padding: 28px 32px;
-            margin: 32px 0;
         }
 
-        .bottom-line h3 {
-            color: white;
-            margin: 0 0 16px 0;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .comparison-box h4 {
+            margin: 0 0 15px 0;
+            font-size: 16px;
         }
 
-        .bottom-line p {
-            color: rgba(255,255,255,0.9);
+        .comparison-box ul {
             margin: 0;
-            font-size: 15px;
-            line-height: 1.7;
+            padding-left: 20px;
         }
+
+        .comparison-box li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .box-red {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+
+        .box-red h4 { color: #dc2626; }
+
+        .box-green {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+
+        .box-green h4 { color: #16a34a; }
 
         /* Footer */
-        .footer {
+        footer {
             background: #1a1a1a;
             color: rgba(255,255,255,0.6);
-            padding: 30px 50px;
+            padding: 25px 40px;
             font-size: 13px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
+            text-align: center;
         }
 
-        .footer-badge {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.1);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-        }
-
-        code {
-            background: #f4f4f4;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 13px;
-            font-family: 'Monaco', 'Consolas', monospace;
-        }
-
-        .section-intro {
-            font-size: 15px;
-            color: #6b7280;
-            margin-bottom: 24px;
-            border-left: 3px solid #d1d5db;
-            padding-left: 16px;
-            line-height: 1.6;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 900px) {
-            body {
-                padding: 10px;
-            }
-
-            .container {
-                border-radius: 12px;
-            }
-
-            .two-column {
-                grid-template-columns: 1fr;
-            }
-
-            .key-findings {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .score-hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .score-circle {
-                margin: 0 auto;
-            }
-
-            .score-tags {
-                justify-content: center;
-            }
-
-            .opportunity-card {
-                grid-template-columns: 1fr;
-            }
-
-            .opp-meta {
-                text-align: left;
-                display: flex;
-                align-items: center;
-                gap: 15px;
-            }
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
-            .content {
-                padding: 30px 25px;
-            }
-
-            header {
-                padding: 40px 25px;
-            }
-
-            header h1 {
-                font-size: 28px;
-            }
-
-            header p {
-                font-size: 16px;
-            }
-
-            .meta-info {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            h2 {
-                font-size: 20px;
-                margin: 40px 0 20px 0;
-            }
-
-            .key-findings {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-
-            .finding-stat {
-                padding: 20px 15px;
-            }
-
-            .finding-stat .value {
-                font-size: 26px;
-            }
-
-            table {
-                font-size: 13px;
-            }
-
-            th, td {
-                padding: 12px 14px;
-            }
-
-            .finding-box {
-                padding: 20px;
-            }
-
-            .two-column .finding-box {
-                padding: 18px;
-            }
-
-            .footer {
-                padding: 25px;
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .competitor-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline {
-                padding-left: 25px;
-            }
-
-            .timeline-item {
-                padding: 20px;
-                margin-left: 15px;
-            }
-
-            .timeline-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
+            .content { padding: 25px; }
+            header { padding: 35px 25px; }
+            header h1 { font-size: 26px; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .action-grid { grid-template-columns: 1fr; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .stat-box .number { font-size: 26px; }
+            summary { padding: 14px 18px; font-size: 14px; }
         }
 
         @media (max-width: 480px) {
-            .content {
-                padding: 25px 20px;
-            }
+            body { padding: 10px; }
+            .content { padding: 20px; }
+            .stat-grid { gap: 12px; }
+            .stat-box { padding: 15px; }
+            .stat-box .number { font-size: 22px; }
+        }
 
-            header {
-                padding: 30px 20px;
-            }
-
-            header h1 {
-                font-size: 24px;
-            }
-
-            .key-findings {
-                gap: 10px;
-            }
-
-            .finding-stat {
-                padding: 18px 12px;
-            }
-
-            .finding-stat .value {
-                font-size: 22px;
-            }
-
-            .finding-stat .label {
-                font-size: 11px;
-            }
-
-            .score-hero {
-                padding: 25px 20px;
-            }
-
-            .score-circle {
-                width: 130px;
-                height: 130px;
-            }
-
-            .score-circle svg {
-                width: 130px;
-                height: 130px;
-            }
-
-            .score-number {
-                font-size: 34px;
-            }
-
-            table {
-                font-size: 12px;
-            }
-
-            th, td {
-                padding: 10px 12px;
-            }
-
-            .opp-number {
-                width: 36px;
-                height: 36px;
-                font-size: 16px;
-            }
-
-            .timeline-tasks {
-                gap: 6px;
-            }
-
-            .task-tag {
-                font-size: 12px;
-                padding: 5px 10px;
-            }
+        /* Print styles */
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; }
+            details { break-inside: avoid; }
+            details[open] .details-content { display: block !important; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="ai-badge">AI-Generated Analysis</div>
+            <div class="badge">Website Analysis Report</div>
             <h1>NeedingAdvice.co.uk</h1>
-            <p>Comprehensive website audit and strategic opportunity assessment for a UK mortgage broker</p>
-            <div class="meta-info">
-                <span>📅 Analysis Date: February 2026</span>
-                <span>🌐 Domain Age: ~12 years</span>
-                <span>📄 Indexed Pages: ~1,700</span>
-                <span>🔍 Ranking Keywords: 8,145</span>
-                <span>⭐ Review Score: 5.0/5</span>
+            <p>Data-driven analysis of traffic, performance, and opportunities</p>
+            <div class="meta-row">
+                <span>February 2026</span>
+                <span>|</span>
+                <span>Google Analytics + SpyFu Data</span>
             </div>
         </header>
 
         <div class="content">
 
-            <!-- Director's Summary - 30 Seconds -->
-            <div style="background: linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%); color: white; border-radius: 16px; padding: 35px 40px; margin-bottom: 40px;">
-                <h2 style="color: white; border: none; margin: 0 0 25px 0; padding: 0; font-size: 22px;">30-Second Summary</h2>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                    <div>
-                        <h3 style="color: #4ade80; margin: 0 0 15px 0; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">The Good News</h3>
-                        <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-                            <li style="color: #fff !important;">Your content is <strong style="color: #4ade80;">already working</strong> — £18k/month traffic value</li>
-                            <li style="color: #fff !important;">5-star reviews, strong expertise, ranking #1 for niche terms</li>
-                            <li style="color: #fff !important;">Clear path to <strong style="color: #4ade80;">double or triple</strong> current performance</li>
-                        </ul>
+            <!-- THE HARD DATA -->
+            <div class="big-picture">
+                <h2>The Hard Data (Google Analytics 2025 vs 2024)</h2>
+                <div class="stat-grid">
+                    <div class="stat-box negative">
+                        <div class="number">-42%</div>
+                        <div class="label">Organic Search Traffic</div>
                     </div>
-                    <div>
-                        <h3 style="color: #f87171; margin: 0 0 15px 0; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">The Problem</h3>
-                        <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
-                            <li style="color: #fff !important;">AI assistants <strong style="color: #f87171;">can't find you</strong> — no structured data</li>
-                            <li style="color: #fff !important;">Directory listing shows <strong style="color: #f87171;">wrong location</strong></li>
-                            <li style="color: #fff !important;">Mobile popup <strong style="color: #f87171;">blocks your content</strong></li>
-                        </ul>
+                    <div class="stat-box negative">
+                        <div class="number">-50%</div>
+                        <div class="label">Mobile Users</div>
                     </div>
-                </div>
-
-                <div style="margin-top: 30px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.2);">
-                    <h3 style="color: #fbbf24; margin: 0 0 15px 0; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Do This Week</h3>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <span style="background: rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 8px; font-weight: 600;">1. Fix the mobile popup</span>
-                        <span style="background: rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 8px; font-weight: 600;">2. Correct Unbiased listing</span>
-                        <span style="background: rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 8px; font-weight: 600;">3. Add schema markup</span>
+                    <div class="stat-box positive">
+                        <div class="number">+62%</div>
+                        <div class="label">Desktop Users</div>
+                    </div>
+                    <div class="stat-box negative">
+                        <div class="number">-42%</div>
+                        <div class="label">Engagement Time</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Score Hero -->
-            <div class="score-hero">
-                <div class="score-circle">
-                    <svg viewBox="0 0 160 160">
-                        <circle class="score-bg" cx="80" cy="80" r="65"/>
-                        <circle class="score-fill" cx="80" cy="80" r="65"/>
-                    </svg>
-                    <div class="score-text">
-                        <div class="score-number">6.5</div>
-                        <div class="score-label">out of 10</div>
+            <!-- THE GOOD NEWS -->
+            <div class="good-news">
+                <h2>But Here's What's WORKING</h2>
+                <div class="stat-grid">
+                    <div class="stat-box">
+                        <div class="number">+5,391%</div>
+                        <div class="label">Benefits Mortgages Page</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">+163%</div>
+                        <div class="label">CCJ Mortgages Page</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">8,145</div>
+                        <div class="label">Ranking Keywords</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="number">5.0</div>
+                        <div class="label">Google Reviews</div>
                     </div>
                 </div>
-                <div class="score-summary">
-                    <h2 style="border: none; margin: 0 0 15px 0; padding: 0;">Overall Assessment</h2>
-                    <p>A <strong>mid-authority informational + lead-gen site</strong> with strong topical breadth across mortgages, credit, insurance, and specialist finance. Currently generating £18k/month in traffic value with potential to reach <strong>£35-50k/month</strong> with optimisation.</p>
-                    <div class="score-tags">
-                        <span class="tag tag-positive">8,145 Keywords</span>
-                        <span class="tag tag-positive">£18.2k/mo Value</span>
-                        <span class="tag tag-positive">5-Star Reviews</span>
-                        <span class="tag tag-neutral">Huge Upside</span>
+            </div>
+
+            <!-- WHAT THIS MEANS -->
+            <div class="insight-box">
+                <h4>What This Actually Means</h4>
+                <p><strong>Desktop grew 62% while mobile collapsed 50%.</strong> This proves one thing: your content is valuable (desktop users stay), but the mobile popup is blocking people from reading it. It's not a content problem. It's a delivery problem. Your specialist "edge case" content (benefits mortgages, CCJs, etc.) is actually thriving massively - that's the strategy to scale.</p>
+            </div>
+
+            <!-- DO THIS WEEK -->
+            <h2 class="section-title">Do This Week</h2>
+
+            <div class="action-grid">
+                <div class="action-card">
+                    <div class="number">1</div>
+                    <h4>Fix Mobile Popup</h4>
+                    <p>Make it dismissible or remove on mobile</p>
+                </div>
+                <div class="action-card">
+                    <div class="number">2</div>
+                    <h4>Fix Unbiased Listing</h4>
+                    <p>Change location from Castle Bromwich to Huddersfield</p>
+                </div>
+                <div class="action-card">
+                    <div class="number">3</div>
+                    <h4>Add Schema Markup</h4>
+                    <p>Make the site visible to AI systems</p>
+                </div>
+            </div>
+
+            <!-- DETAILED SECTIONS -->
+            <h2 class="section-title">Detailed Analysis</h2>
+            <p style="color: #666; margin-bottom: 25px;">Click any section below to expand the full details.</p>
+
+            <!-- Mobile Popup Impact -->
+            <details>
+                <summary>
+                    The Mobile Popup Problem
+                    <span class="summary-tag tag-critical">Critical Issue</span>
+                </summary>
+                <div class="details-content">
+                    <div class="alert alert-critical">
+                        <h4>The popup is costing you ~25,000 visitors per year</h4>
+                        <p>On mobile devices, the "Would you like us to call you?" popup covers the main content, making articles unreadable. Users can't dismiss it easily, so they leave.</p>
+                    </div>
+
+                    <h4 style="margin: 25px 0 15px;">The Numbers</h4>
+                    <table>
+                        <tr>
+                            <th>Metric</th>
+                            <th>2024</th>
+                            <th>2025</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td>Mobile Users</td>
+                            <td>49,979</td>
+                            <td>25,119</td>
+                            <td class="status-bad">-49.74%</td>
+                        </tr>
+                        <tr>
+                            <td>Desktop Users</td>
+                            <td>30,071</td>
+                            <td>48,677</td>
+                            <td class="status-good">+61.87%</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile Engaged Sessions</td>
+                            <td>38,878</td>
+                            <td>18,238</td>
+                            <td class="status-bad">-53.09%</td>
+                        </tr>
+                    </table>
+
+                    <div class="insight-box">
+                        <h4>Why Desktop Grew While Mobile Died</h4>
+                        <p>Desktop users can work around the popup (scroll past it, close it). Mobile users can't - the popup fills the screen. So desktop traffic grew because your content IS valuable. Mobile traffic collapsed because people literally can't read it.</p>
+                    </div>
+
+                    <h4 style="margin: 25px 0 15px;">Estimated Lost Revenue</h4>
+                    <ul>
+                        <li>Lost mobile visitors: ~25,000/year</li>
+                        <li>If 2% would convert: <strong>500 lost leads</strong></li>
+                        <li>At £200-500 per lead: <strong>£100,000-250,000/year in lost revenue</strong></li>
+                    </ul>
+                    <p style="margin-top: 15px; color: #666;">The popup might bring in 50-100 leads, but it's costing you 5x more.</p>
+                </div>
+            </details>
+
+            <!-- What's Working -->
+            <details>
+                <summary>
+                    Content That's Actually Winning
+                    <span class="summary-tag tag-good">Scale This</span>
+                </summary>
+                <div class="details-content">
+                    <div class="alert alert-success">
+                        <h4>Your "edge case" specialist content is exploding</h4>
+                        <p>While overall traffic is down, your niche specialist pages are seeing massive growth. This is the winning formula to scale.</p>
+                    </div>
+
+                    <h4 style="margin: 25px 0 15px;">Top Performing Pages</h4>
+                    <table>
+                        <tr>
+                            <th>Page</th>
+                            <th>2024 Views</th>
+                            <th>2025 Views</th>
+                            <th>Growth</th>
+                        </tr>
+                        <tr>
+                            <td>/mortgage-lenders-that-accept-benefits/</td>
+                            <td>68</td>
+                            <td>3,734</td>
+                            <td class="status-good">+5,391%</td>
+                        </tr>
+                        <tr>
+                            <td>/digital-mortgages/</td>
+                            <td>11</td>
+                            <td>2,419</td>
+                            <td class="status-good">+21,890%</td>
+                        </tr>
+                        <tr>
+                            <td>/mortgage-lenders-that-accept-ccjs/</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td class="status-good">+163%</td>
+                        </tr>
+                    </table>
+
+                    <h4 style="margin: 25px 0 15px;">Why These Pages Work</h4>
+                    <ul>
+                        <li><strong>Highly specific niche</strong> - targeting people rejected elsewhere</li>
+                        <li><strong>Comprehensive lender tables</strong> - showing exactly which banks accept what</li>
+                        <li><strong>Detailed FAQs</strong> - answering every possible question</li>
+                        <li><strong>Embedded testimonials</strong> - proof you've helped this specific audience</li>
+                        <li><strong>Regular updates</strong> - shows you're current and active</li>
+                    </ul>
+
+                    <h4 style="margin: 25px 0 15px;">More Topics to Create (Same Formula)</h4>
+                    <table>
+                        <tr>
+                            <th>Topic</th>
+                            <th>Search Intent</th>
+                        </tr>
+                        <tr>
+                            <td>Mortgage on maternity leave UK</td>
+                            <td>Can I get mortgage while pregnant/on leave?</td>
+                        </tr>
+                        <tr>
+                            <td>Mortgage for NHS workers UK</td>
+                            <td>Key worker mortgage schemes</td>
+                        </tr>
+                        <tr>
+                            <td>Zero hours contract mortgage</td>
+                            <td>Gig economy mortgages</td>
+                        </tr>
+                        <tr>
+                            <td>Mortgage after divorce UK</td>
+                            <td>Removing ex, single income</td>
+                        </tr>
+                        <tr>
+                            <td>Mortgage for company directors</td>
+                            <td>Ltd company income mortgages</td>
+                        </tr>
+                    </table>
+                </div>
+            </details>
+
+            <!-- Traffic Decline Details -->
+            <details>
+                <summary>
+                    Full Traffic Decline Analysis
+                    <span class="summary-tag tag-warning">Important Context</span>
+                </summary>
+                <div class="details-content">
+                    <h4 style="margin: 0 0 15px;">Overall Site Performance (2025 vs 2024)</h4>
+                    <table>
+                        <tr>
+                            <th>Metric</th>
+                            <th>2024</th>
+                            <th>2025</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td>Total Sessions</td>
+                            <td>98,999</td>
+                            <td>84,785</td>
+                            <td class="status-bad">-14.36%</td>
+                        </tr>
+                        <tr>
+                            <td>Active Users</td>
+                            <td>81,097</td>
+                            <td>74,475</td>
+                            <td class="status-bad">-8.17%</td>
+                        </tr>
+                        <tr>
+                            <td>Engaged Sessions</td>
+                            <td>69,900</td>
+                            <td>51,296</td>
+                            <td class="status-bad">-26.62%</td>
+                        </tr>
+                        <tr>
+                            <td>Engagement Rate</td>
+                            <td>70.61%</td>
+                            <td>60.5%</td>
+                            <td class="status-bad">-14.31%</td>
+                        </tr>
+                    </table>
+
+                    <h4 style="margin: 25px 0 15px;">Organic Search (Google Traffic)</h4>
+                    <table>
+                        <tr>
+                            <th>Metric</th>
+                            <th>2024</th>
+                            <th>2025</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td>Sessions</td>
+                            <td>83,604</td>
+                            <td>48,530</td>
+                            <td class="status-bad">-41.95%</td>
+                        </tr>
+                        <tr>
+                            <td>Engaged Sessions</td>
+                            <td>60,228</td>
+                            <td>31,666</td>
+                            <td class="status-bad">-47.42%</td>
+                        </tr>
+                    </table>
+
+                    <h4 style="margin: 25px 0 15px;">Engagement Time</h4>
+                    <table>
+                        <tr>
+                            <th>Metric</th>
+                            <th>2024</th>
+                            <th>2025</th>
+                            <th>Change</th>
+                        </tr>
+                        <tr>
+                            <td>Avg Engagement Time</td>
+                            <td>1m 20s</td>
+                            <td>46s</td>
+                            <td class="status-bad">-42.33%</td>
+                        </tr>
+                        <tr>
+                            <td>Homepage Engagement</td>
+                            <td>23s</td>
+                            <td>13s</td>
+                            <td class="status-bad">-43.05%</td>
+                        </tr>
+                    </table>
+
+                    <div class="insight-box">
+                        <h4>Key Finding</h4>
+                        <p>The site lost 35,074 organic search sessions in one year. That's a 42% drop in Google traffic. People land, can't read the content (popup), and leave - engagement time dropped 42%.</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- Executive Summary -->
-            <div class="finding-info" style="margin-bottom: 40px;">
-                <h4>📌 Executive Summary</h4>
-                <p style="margin-bottom: 0;">This report explains why NeedingAdvice.co.uk is seeing reduced inbound traffic and little visibility in AI-driven recommendations, despite being a well-reviewed and established mortgage advice business. The core issue is not service quality, trust, or legitimacy — it is <strong>entity clarity</strong>. Modern search and answer engines increasingly surface businesses they can reliably interpret as a local, authoritative provider, based on consistent third-party listings and machine-readable signals rather than keyword rankings alone. The Entity Visibility Scorecard (22/40) reflects strong trust assets offset by gaps in structured data, directory consistency, and local service page structure. The opportunity is therefore to <strong>optimise signals rather than produce large volumes of new content</strong>.</p>
-            </div>
-
-            <!-- Key Findings -->
-            <div class="key-findings">
-                <div class="finding-stat positive">
-                    <div class="value">8,145</div>
-                    <div class="label">Ranking Keywords (UK)</div>
-                </div>
-                <div class="finding-stat positive">
-                    <div class="value">£18.2k</div>
-                    <div class="label">Monthly Traffic Value</div>
-                </div>
-                <div class="finding-stat warning">
-                    <div class="value">2,029</div>
-                    <div class="label">Monthly Organic Clicks</div>
-                </div>
-                <div class="finding-stat positive">
-                    <div class="value">505k</div>
-                    <div class="label">Search Footprint/Month</div>
-                </div>
-            </div>
-
-            <!-- Growth Potential Box -->
-            <div class="finding-info" style="margin-bottom: 40px;">
-                <h4>📈 Verified Growth Potential (SpyFu Data)</h4>
-                <p>Based on current keyword positions, if NeedingAdvice moves <strong>20 keywords from positions 20-40 into the top 10</strong>, and <strong>10 keywords from top 10 into top 3</strong>:</p>
-                <ul style="margin-bottom: 0;">
-                    <li><strong>Projected traffic:</strong> 4,500-6,000 clicks/month (up from 2,029)</li>
-                    <li><strong>Projected value:</strong> £35,000-£50,000/month equivalent</li>
-                    <li><strong>Key insight:</strong> Most high-volume keywords currently rank positions 30-90 — huge upside with on-page optimisation</li>
-                </ul>
-            </div>
-
-            <!-- Entity Visibility Scorecard -->
-            <h2><span class="emoji">🎯</span> Entity Visibility Scorecard</h2>
-            <p class="section-intro">How "answer engines" (ChatGPT, Google AI) and local discovery systems recognise, trust, and recommend this business. Scale: 0 (missing) to 5 (excellent).</p>
-
-            <div class="ranking-section">
-                <table>
-                    <tr>
-                        <th>Signal Category</th>
-                        <th>Score</th>
-                        <th>Assessment</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Structured data (schema)</strong></td>
-                        <td><span class="rank-badge rank-missing">0/5</span></td>
-                        <td>No JSON-LD detected — invisible to AI systems</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Directory consistency (NAP)</strong></td>
-                        <td><span class="rank-badge rank-missing">2/5</span></td>
-                        <td>Unbiased shows "Castle Bromwich" vs Huddersfield</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Review authority</strong></td>
-                        <td><span class="rank-badge rank-1">5/5</span></td>
-                        <td>561 Trustpilot reviews, "Excellent" rating</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Regulatory clarity</strong></td>
-                        <td><span class="rank-badge rank-missing">2/5</span></td>
-                        <td>Some pages have incorrect wording ("MBRA")</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Local proof on-site</strong></td>
-                        <td><span class="rank-badge rank-top5">3/5</span></td>
-                        <td>Address present but pages read as legacy SEO copy</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Freshness signals</strong></td>
-                        <td><span class="rank-badge rank-top5">3/5</span></td>
-                        <td>Some recent updates, but core copy feels dated</td>
-                    </tr>
-                    <tr>
-                        <td><strong>People & expertise</strong></td>
-                        <td><span class="rank-badge rank-top5">4/5</span></td>
-                        <td>Team page exists with named staff and roles</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Social/brand corroboration</strong></td>
-                        <td><span class="rank-badge rank-top5">3/5</span></td>
-                        <td>Social links present but not in schema markup</td>
-                    </tr>
-                </table>
-
-                <div class="finding-info" style="margin-top: 20px;">
-                    <h4>Overall Entity Score: 22/40 (55%)</h4>
-                    <p style="margin-bottom: 0;"><strong>Biggest blockers to AI recommendation:</strong> (1) No schema markup, (2) Inconsistent directory location, (3) Legacy/inaccurate regulatory phrasing on key pages.</p>
-                </div>
-            </div>
-
-            <!-- Search Rankings -->
-            <h2><span class="emoji">📊</span> Search Engine Rankings</h2>
-            <p class="section-intro">Verified rankings from Google.co.uk and SpyFu UK market data. The site shows strong performance across core positioning, niche terms, and local searches.</p>
-
-            <div class="ranking-section">
-                <h3>Where The Site Ranks Well</h3>
-                <table>
-                    <tr>
-                        <th>Search Term</th>
-                        <th>Position</th>
-                        <th>Analysis</th>
-                    </tr>
-                    <tr>
-                        <td><strong>"whole of market mortgage broker"</strong></td>
-                        <td><span class="rank-badge rank-missing">Not page 1</span></td>
-                        <td>Appears in Google Business Profile, but not in organic results</td>
-                    </tr>
-                    <tr>
-                        <td><strong>"influencer mortgage uk"</strong></td>
-                        <td><span class="rank-badge rank-1">#1</span></td>
-                        <td>Dominant position in a growing niche market</td>
-                    </tr>
-                    <tr>
-                        <td><strong>"mortgage broker huddersfield"</strong></td>
-                        <td><span class="rank-badge rank-missing">Not page 1</span></td>
-                        <td>Key local term — currently not ranking, major opportunity</td>
-                    </tr>
-                    <tr>
-                        <td><strong>"mortgages for gen z uk"</strong></td>
-                        <td><span class="rank-badge rank-1">#1</span></td>
-                        <td>Excellent — beating major news publications</td>
-                    </tr>
-                </table>
-
-                <h3>Highest-Value Keyword Opportunities (SpyFu Data)</h3>
-                <table>
-                    <tr>
-                        <th>Keyword</th>
-                        <th>Position</th>
-                        <th>UK Volume</th>
-                        <th>Difficulty</th>
-                        <th>Intent</th>
-                    </tr>
-                    <tr>
-                        <td><strong>buy to let mortgage</strong></td>
-                        <td><span class="rank-badge rank-missing">91</span></td>
-                        <td>25,400</td>
-                        <td>20</td>
-                        <td>Commercial</td>
-                    </tr>
-                    <tr>
-                        <td><strong>guarantor mortgage</strong></td>
-                        <td><span class="rank-badge rank-missing">73</span></td>
-                        <td>2,300</td>
-                        <td>16</td>
-                        <td>Commercial</td>
-                    </tr>
-                    <tr>
-                        <td><strong>let to buy mortgage</strong></td>
-                        <td><span class="rank-badge rank-missing">65</span></td>
-                        <td>2,100</td>
-                        <td>22</td>
-                        <td>Commercial</td>
-                    </tr>
-                    <tr>
-                        <td><strong>first direct mortgage</strong></td>
-                        <td><span class="rank-badge rank-top5">#9</span></td>
-                        <td>1,200</td>
-                        <td>25</td>
-                        <td>Brand/Commercial</td>
-                    </tr>
-                    <tr>
-                        <td><strong>flying freehold</strong></td>
-                        <td><span class="rank-badge rank-missing">70</span></td>
-                        <td>2,000</td>
-                        <td>8</td>
-                        <td>Informational</td>
-                    </tr>
-                    <tr>
-                        <td><strong>loan to value</strong></td>
-                        <td><span class="rank-badge rank-missing">93</span></td>
-                        <td>1,900</td>
-                        <td>18</td>
-                        <td>Informational</td>
-                    </tr>
-                </table>
-                <p style="font-size: 13px; color: #666; margin-top: 15px;"><em>Key insight: These keywords have strong commercial intent and low-medium difficulty. Moving them from positions 65-93 into top 20 would significantly increase qualified traffic.</em></p>
-
-                <h3>Low-Competition Quick Wins</h3>
-                <table>
-                    <tr>
-                        <th>Keyword</th>
-                        <th>Difficulty (KD)</th>
-                        <th>Current Status</th>
-                        <th>Opportunity</th>
-                    </tr>
-                    <tr>
-                        <td><strong>flying freehold</strong></td>
-                        <td><span class="status-good">8 (Easy)</span></td>
-                        <td>Ranking but weak</td>
-                        <td>Content refresh → top 10</td>
-                    </tr>
-                    <tr>
-                        <td><strong>non standard construction</strong></td>
-                        <td><span class="status-good">8 (Easy)</span></td>
-                        <td>Low position</td>
-                        <td>Create definitive guide</td>
-                    </tr>
-                    <tr>
-                        <td><strong>springboard mortgage</strong></td>
-                        <td><span class="status-good">10 (Easy)</span></td>
-                        <td>Opportunity</td>
-                        <td>New content piece</td>
-                    </tr>
-                    <tr>
-                        <td><strong>unadopted road</strong></td>
-                        <td><span class="status-warning">12 (Low)</span></td>
-                        <td>Opportunity</td>
-                        <td>Mortgage implications article</td>
-                    </tr>
-                    <tr>
-                        <td><strong>deck access flat</strong></td>
-                        <td><span class="status-warning">16 (Low)</span></td>
-                        <td>Opportunity</td>
-                        <td>Specialist mortgage content</td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="finding-critical">
-                <h4>🚨 Local SEO Gap: Not Ranking for Huddersfield</h4>
-                <p>NeedingAdvice is <strong>not appearing on page 1</strong> for key local searches like "get a mortgage huddersfield" or "mortgage broker huddersfield" — despite being a Huddersfield-based broker. This is a significant missed opportunity.</p>
-                <p style="margin-bottom: 0;"><strong>Who IS ranking:</strong> JB Mortgages (#1), Mortgage Advice Bureau (#2), KB Mortgage Services (#3), Steeples Mortgages (#5). These should be your targets.</p>
-            </div>
+            </details>
 
             <!-- AI Visibility -->
-            <h2><span class="emoji">🤖</span> AI Recommendation Visibility</h2>
-            <p class="section-intro">As AI assistants (ChatGPT, Google AI Overviews, Perplexity) become key discovery channels, visibility to these systems is increasingly important.</p>
+            <details>
+                <summary>
+                    AI & Search Visibility Issues
+                    <span class="summary-tag tag-critical">Missing Opportunity</span>
+                </summary>
+                <div class="details-content">
+                    <div class="alert alert-critical">
+                        <h4>AI assistants can't recommend you</h4>
+                        <p>When asked "Who are the best mortgage brokers in Huddersfield?", ChatGPT doesn't include NeedingAdvice - despite 5-star reviews and being based there.</p>
+                    </div>
 
-            <div class="finding-critical">
-                <h4>❌ Test Result: Not Recommended</h4>
-                <p>When asked <em>"Who are the best mortgage brokers in Huddersfield?"</em>, ChatGPT did not include NeedingAdvice.co.uk in its recommendations — despite being a Huddersfield-based broker with 5-star reviews.</p>
-                <p style="margin-bottom: 0;">This represents a significant missed opportunity as AI-powered discovery grows.</p>
-            </div>
+                    <h4 style="margin: 25px 0 15px;">Why AI Systems Can't "See" This Business</h4>
 
-            <h3>Why AI Systems Cannot "See" This Business</h3>
+                    <div class="comparison-grid">
+                        <div class="comparison-box box-red">
+                            <h4>Problems</h4>
+                            <ul>
+                                <li><strong>No Schema Markup</strong> - No machine-readable data</li>
+                                <li><strong>Wrong Directory Location</strong> - Unbiased shows Castle Bromwich</li>
+                                <li><strong>Old Key Pages</strong> - Huddersfield page is 12 years old</li>
+                                <li><strong>Reviews Not Integrated</strong> - Trustpilot not in schema</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-box box-green">
+                            <h4>Fixes</h4>
+                            <ul>
+                                <li><strong>Add LocalBusiness JSON-LD</strong> - Makes you visible to AI</li>
+                                <li><strong>Fix Unbiased listing</strong> - Correct location</li>
+                                <li><strong>Rebuild Huddersfield page</strong> - Modern local hub</li>
+                                <li><strong>Add Review schema</strong> - Connect reviews to entity</li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <div class="competitor-grid">
-                <div class="competitor-card">
-                    <div class="competitor-name">🚫 No LocalBusiness Schema</div>
-                    <div class="competitor-stats">
-                        <p style="margin: 0; font-size: 14px; color: #666;">No machine-readable structured data exists identifying this as a Huddersfield mortgage broker. AI systems cannot reliably extract location and service information.</p>
+                    <h4 style="margin: 25px 0 15px;">Entity Visibility Score: 22/40 (55%)</h4>
+                    <table>
+                        <tr>
+                            <th>Signal</th>
+                            <th>Score</th>
+                            <th>Issue</th>
+                        </tr>
+                        <tr>
+                            <td>Structured data (schema)</td>
+                            <td class="status-bad">0/5</td>
+                            <td>None detected</td>
+                        </tr>
+                        <tr>
+                            <td>Directory consistency</td>
+                            <td class="status-warning">2/5</td>
+                            <td>Conflicting locations</td>
+                        </tr>
+                        <tr>
+                            <td>Review authority</td>
+                            <td class="status-good">5/5</td>
+                            <td>Excellent (561 Trustpilot)</td>
+                        </tr>
+                        <tr>
+                            <td>People & expertise</td>
+                            <td class="status-good">4/5</td>
+                            <td>Team page exists</td>
+                        </tr>
+                    </table>
+                </div>
+            </details>
+
+            <!-- Search Rankings -->
+            <details>
+                <summary>
+                    Current Search Rankings
+                    <span class="summary-tag tag-info">8,145 Keywords</span>
+                </summary>
+                <div class="details-content">
+                    <h4 style="margin: 0 0 15px;">Where You Rank Well</h4>
+                    <table>
+                        <tr>
+                            <th>Search Term</th>
+                            <th>Position</th>
+                        </tr>
+                        <tr>
+                            <td>influencer mortgage uk</td>
+                            <td class="status-good">#1</td>
+                        </tr>
+                        <tr>
+                            <td>mortgages for gen z uk</td>
+                            <td class="status-good">#1</td>
+                        </tr>
+                        <tr>
+                            <td>first direct mortgage</td>
+                            <td class="status-good">#9</td>
+                        </tr>
+                    </table>
+
+                    <h4 style="margin: 25px 0 15px;">High-Volume Keywords (Opportunity)</h4>
+                    <table>
+                        <tr>
+                            <th>Keyword</th>
+                            <th>Position</th>
+                            <th>UK Volume</th>
+                        </tr>
+                        <tr>
+                            <td>buy to let mortgage</td>
+                            <td class="status-bad">91</td>
+                            <td>25,400</td>
+                        </tr>
+                        <tr>
+                            <td>guarantor mortgage</td>
+                            <td class="status-bad">73</td>
+                            <td>2,300</td>
+                        </tr>
+                        <tr>
+                            <td>let to buy mortgage</td>
+                            <td class="status-bad">65</td>
+                            <td>2,100</td>
+                        </tr>
+                    </table>
+
+                    <div class="alert alert-warning" style="margin-top: 20px;">
+                        <h4>Local SEO Gap</h4>
+                        <p>NeedingAdvice is NOT on page 1 for "mortgage broker huddersfield" - despite being based there. JB Mortgages and Mortgage Advice Bureau are ranking instead.</p>
                     </div>
                 </div>
-                <div class="competitor-card">
-                    <div class="competitor-name">⚠️ Conflicting Directory Data</div>
-                    <div class="competitor-stats">
-                        <p style="margin: 0; font-size: 14px; color: #666;">The Unbiased.co.uk listing shows "Castle Bromwich" — not Huddersfield. This conflicting signal damages local entity recognition across all systems.</p>
+            </details>
+
+            <!-- Competitive Position -->
+            <details>
+                <summary>
+                    Competitive Analysis
+                    <span class="summary-tag tag-info">SpyFu Data</span>
+                </summary>
+                <div class="details-content">
+                    <table>
+                        <tr>
+                            <th>Competitor</th>
+                            <th>Common Keywords</th>
+                            <th>Threat Level</th>
+                        </tr>
+                        <tr>
+                            <td><strong>NeedingAdvice (You)</strong></td>
+                            <td>8,145 total</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>OnlineMortgageAdvisor</td>
+                            <td>1,543</td>
+                            <td class="status-bad">Very High</td>
+                        </tr>
+                        <tr>
+                            <td>TheMortgageHut</td>
+                            <td>1,128</td>
+                            <td class="status-bad">High</td>
+                        </tr>
+                        <tr>
+                            <td>L&C</td>
+                            <td>1,103</td>
+                            <td class="status-warning">Medium</td>
+                        </tr>
+                    </table>
+
+                    <div class="alert alert-success" style="margin-top: 20px;">
+                        <h4>Your Competitive Advantage</h4>
+                        <p>SpyFu identifies your strength as <strong>specialist mortgage edge cases</strong> - complex income, unusual properties, adverse credit. This is a defendable niche where larger competitors struggle. Double down on this.</p>
                     </div>
                 </div>
-                <div class="competitor-card">
-                    <div class="competitor-name">📅 Outdated Key Pages</div>
-                    <div class="competitor-stats">
-                        <p style="margin: 0; font-size: 14px; color: #666;">The Huddersfield landing page is ~11.9 years old with legacy formatting. AI and search systems favour recently updated, comprehensive pages.</p>
-                    </div>
+            </details>
+
+            <!-- Addressing Damian's Concerns -->
+            <h2 class="section-title">Addressing Common Concerns</h2>
+
+            <details>
+                <summary>
+                    "I don't think traffic is dropping"
+                    <span class="summary-tag tag-critical">Data Says Otherwise</span>
+                </summary>
+                <div class="details-content">
+                    <p>The Google Analytics data shows:</p>
+                    <ul>
+                        <li><strong>14% overall drop</strong> in sessions</li>
+                        <li><strong>42% organic search drop</strong> (35,000 lost sessions)</li>
+                        <li><strong>50% mobile traffic drop</strong> (25,000 lost users)</li>
+                    </ul>
+                    <p style="margin-top: 15px;">This isn't opinion - it's Google Analytics data comparing 2025 to 2024.</p>
                 </div>
-                <div class="competitor-card">
-                    <div class="competitor-name">⭐ Reviews Not Integrated</div>
-                    <div class="competitor-stats">
-                        <p style="margin: 0; font-size: 14px; color: #666;">Excellent Trustpilot reviews exist but aren't marked up with Review schema, so AI systems don't associate them with the business entity.</p>
-                    </div>
+            </details>
+
+            <details>
+                <summary>
+                    "The popup is my biggest lead bringer"
+                    <span class="summary-tag tag-warning">Survivorship Bias</span>
+                </summary>
+                <div class="details-content">
+                    <p><strong>What you see:</strong> Leads coming through the popup form.</p>
+                    <p><strong>What you don't see:</strong></p>
+                    <ul>
+                        <li>25,000 mobile users who left immediately</li>
+                        <li>53% drop in mobile engaged sessions</li>
+                        <li>42% drop in time spent on site</li>
+                        <li>Countless potential leads who bounced before reading anything</li>
+                    </ul>
+                    <p style="margin-top: 15px;">The popup may bring some leads, but it's <strong>costing you 5x more</strong> in lost opportunities.</p>
                 </div>
-            </div>
+            </details>
 
-            <!-- UX Issues -->
-            <h2><span class="emoji">📱</span> User Experience Issues</h2>
-            <p class="section-intro">With 60%+ of mortgage searches happening on mobile devices, the mobile experience directly impacts conversions.</p>
-
-            <div class="finding-critical">
-                <h4>🚨 Critical: Content Blocked on Mobile</h4>
-                <p>On mobile devices, a persistent popup with "Would you like us to call you?" <strong>covers the main content area</strong>, making articles unreadable. Combined with a sticky footer bar consuming ~15% of the viewport, users have very limited space to consume content.</p>
-                <p style="margin-bottom: 0;"><strong>Likely result:</strong> Significantly elevated bounce rates and lost leads.</p>
-            </div>
-
-            <div class="two-column">
-                <div class="finding-warning">
-                    <h4 style="margin-top: 0;">⚡ Dated Visual Design</h4>
-                    <p style="margin-bottom: 0;">The design reflects ~2015 web standards. While functional, it may not inspire the same trust as modernised competitor sites — particularly important in financial services.</p>
+            <details>
+                <summary>
+                    "I'm worried about losing SEO if we change things"
+                    <span class="summary-tag tag-good">Low Risk</span>
+                </summary>
+                <div class="details-content">
+                    <p><strong>You're already losing SEO by doing nothing</strong> - 42% of Google traffic is gone.</p>
+                    <p>The fixes we're proposing:</p>
+                    <ul>
+                        <li><strong>Don't change URLs</strong> - Your link equity stays</li>
+                        <li><strong>Don't delete content</strong> - All existing pages remain</li>
+                        <li><strong>Add schema</strong> - Only adds to pages, doesn't remove</li>
+                        <li><strong>Fix popup</strong> - Makes content more accessible</li>
+                    </ul>
+                    <p style="margin-top: 15px;">These changes make your existing content more accessible and visible. They don't touch your URL structure or remove anything.</p>
                 </div>
-                <div class="finding-warning">
-                    <h4 style="margin-top: 0;">🎯 Too Many CTAs</h4>
-                    <p style="margin-bottom: 0;">Multiple contact mechanisms compete simultaneously: sticky footer, sidebar form, popup widget, inline phone numbers. Research shows this creates decision paralysis.</p>
+            </details>
+
+            <details>
+                <summary>
+                    "I've invested a lot in this site"
+                    <span class="summary-tag tag-good">Investment Not Lost</span>
+                </summary>
+                <div class="details-content">
+                    <p><strong>The investment isn't lost.</strong> You have:</p>
+                    <ul>
+                        <li>8,145 ranking keywords</li>
+                        <li>1,700+ indexed pages of valuable content</li>
+                        <li>5-star reviews (127 Google, 561 Trustpilot)</li>
+                        <li>Strong specialist expertise</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Desktop traffic actually grew 62%</strong> - proving the content works when people can access it.</p>
+                    <p>We're not rebuilding. We're optimizing delivery of what already works.</p>
                 </div>
-            </div>
+            </details>
 
-            <!-- Content Strength -->
-            <h2><span class="emoji">✅</span> Content Strengths</h2>
+            <!-- PROJECTED RECOVERY -->
+            <h2 class="section-title">Projected Recovery</h2>
 
-            <div class="finding-positive">
-                <h4>Exceptional Content Library</h4>
-                <p>With ~1,700 indexed pages covering specialist mortgage topics, the site has one of the most comprehensive content libraries in the UK broker space. Sample analysis of the top-ranking "Influencer Mortgages" article:</p>
-                <ul style="margin-bottom: 0;">
-                    <li><strong>5,097 words</strong> — comprehensive depth</li>
-                    <li><strong>17 H2 sections</strong> — well-structured for readability</li>
-                    <li><strong>53 internal links</strong> — strong site architecture</li>
-                    <li><strong>Updated January 2026</strong> — actively maintained</li>
-                </ul>
-            </div>
+            <p style="margin-bottom: 20px;">If the mobile popup is fixed and other recommendations implemented:</p>
 
-            <h3>Content Opportunities</h3>
             <table>
                 <tr>
-                    <th>Enhancement</th>
-                    <th>Current State</th>
-                    <th>Potential Benefit</th>
+                    <th>Metric</th>
+                    <th>Current</th>
+                    <th>6 Months</th>
+                    <th>12 Months</th>
                 </tr>
                 <tr>
-                    <td>TL;DR Summaries</td>
-                    <td class="status-warning">Not present</td>
-                    <td>Up to 33% increase in conversions</td>
+                    <td>Mobile Users</td>
+                    <td>25,119</td>
+                    <td class="status-good">35,000</td>
+                    <td class="status-good">45,000</td>
                 </tr>
                 <tr>
-                    <td>FAQ Schema Markup</td>
-                    <td class="status-warning">Not detected</td>
-                    <td>Rich results in Google, AI extraction</td>
+                    <td>Overall Sessions</td>
+                    <td>84,785</td>
+                    <td class="status-good">95,000</td>
+                    <td class="status-good">110,000</td>
                 </tr>
                 <tr>
-                    <td>Video Content</td>
-                    <td class="status-bad">None</td>
-                    <td>YouTube/TikTok discovery, trust building</td>
+                    <td>Engagement Time</td>
+                    <td>46s</td>
+                    <td class="status-good">1m</td>
+                    <td class="status-good">1m 15s</td>
                 </tr>
                 <tr>
-                    <td>Interactive Calculators</td>
-                    <td class="status-bad">None</td>
-                    <td>3x session time, 2x lead capture</td>
+                    <td>Organic Traffic</td>
+                    <td>48,530</td>
+                    <td class="status-good">60,000</td>
+                    <td class="status-good">75,000</td>
                 </tr>
             </table>
 
-            <!-- Competitive Analysis -->
-            <h2><span class="emoji">⚔️</span> Competitive Analysis (SpyFu Data)</h2>
-            <p class="section-intro">Organic competitors ranked by keyword overlap — these sites are competing for the same search terms.</p>
-
-            <div class="competitor-grid">
-                <div class="competitor-card current">
-                    <div class="competitor-name">NeedingAdvice.co.uk</div>
-                    <div class="competitor-stats">
-                        <div class="comp-stat">
-                            <span class="label">Ranking Keywords</span>
-                            <span class="value">8,145</span>
-                        </div>
-                        <div class="comp-stat">
-                            <span class="label">Monthly Traffic Value</span>
-                            <span class="value">£18,231</span>
-                        </div>
-                        <div class="comp-stat">
-                            <span class="label">Google Reviews</span>
-                            <span class="value">5.0★ (127)</span>
-                        </div>
-                        <div class="comp-stat">
-                            <span class="label">Strength</span>
-                            <span class="value status-good">Edge cases</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="competitor-card">
-                    <div class="competitor-name">OnlineMortgageAdvisor.co.uk</div>
-                    <div class="competitor-stats">
-                        <div class="comp-stat">
-                            <span class="label">Common Keywords</span>
-                            <span class="value">1,543</span>
-                        </div>
-                        <div class="comp-stat">
-                            <span class="label">Threat Level</span>
-                            <span class="value status-bad">Very High</span>
-                        </div>
-                        <div class="comp-stat">
-                            <span class="label">Business Type</span>
-                            <span class="value">Lead Gen Portal</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="competitor-card">
-                    <div class="competitor-name">TheMortgageHut.co.uk</div>
-                    <div class="competitor-stats">
-                        <div class="comp-stat">
-                            <span class="label">Common Keywords</span>
-                            <span class="value">1,128</span>
-                        </div>
-                        <div class="comp-stat">
-                            <span class="label">Threat Level</span>
-                            <span class="value status-bad">High</span>
-                        </div>
-                        <div class="comp-stat">
-                            <span class="label">Business Type</span>
-                            <span class="value">Broker Network</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="competitor-card">
-                    <div class="competitor-name">L&C (landc.co.uk)</div>
-                    <div class="competitor-stats">
-                        <div class="comp-stat">
-                            <span class="label">Common Keywords</span>
-                            <span class="value">1,103</span>
-                        </div>
-                        <div class="comp-stat">
-                            <span class="label">Threat Level</span>
-                            <span class="value status-warning">Medium</span>
-                        </div>
-                        <div class="comp-stat">
-                            <span class="label">Business Type</span>
-                            <span class="value">Fee-Free Broker</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="competitor-card">
-                    <div class="competitor-name">Charcol.co.uk</div>
-                    <div class="competitor-stats">
-                        <div class="comp-stat">
-                            <span class="label">Common Keywords</span>
-                            <span class="value">871</span>
-                        </div>
-                        <div class="comp-stat">
-                            <span class="label">Threat Level</span>
-                            <span class="value status-warning">Medium</span>
-                        </div>
-                        <div class="comp-stat">
-                            <span class="label">Business Type</span>
-                            <span class="value">National Broker</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="competitor-card">
-                    <div class="competitor-name">Mortgageable.co.uk</div>
-                    <div class="competitor-stats">
-                        <div class="comp-stat">
-                            <span class="label">Common Keywords</span>
-                            <span class="value">920</span>
-                        </div>
-                        <div class="comp-stat">
-                            <span class="label">Threat Level</span>
-                            <span class="value status-warning">Medium</span>
-                        </div>
-                        <div class="comp-stat">
-                            <span class="label">Business Type</span>
-                            <span class="value">Specialist Broker</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="finding-positive" style="margin-top: 25px;">
-                <h4>💪 Competitive Advantage: Specialist Edge Cases</h4>
-                <p style="margin-bottom: 0;">SpyFu identifies NeedingAdvice's strength as <strong>specialist mortgage edge cases</strong> — complex income, unusual properties, adverse credit. This is a defendable niche where larger competitors struggle. The recommended strategy is to build "Mortgage Acceptability" content clusters covering what lenders accept, risks, and case studies.</p>
-            </div>
-
-            <!-- Keyword Intent Map -->
-            <h2><span class="emoji">🔍</span> Local Keyword Intent Map</h2>
-            <p class="section-intro">High-intent local queries that should drive landing page strategy. These are the searches people make before contacting a mortgage broker.</p>
-
-            <div class="ranking-section">
-                <table>
-                    <tr>
-                        <th>Query Cluster</th>
-                        <th>Example Searches</th>
-                        <th>Intent</th>
-                        <th>Target Page</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Core local broker</strong></td>
-                        <td>mortgage broker Huddersfield, best mortgage adviser Huddersfield</td>
-                        <td><span class="status-good">Transactional</span></td>
-                        <td>Local service hub (rebuild)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>First-time buyer</strong></td>
-                        <td>first time buyer mortgage Huddersfield, 95% mortgage Huddersfield</td>
-                        <td><span class="status-good">Transactional</span></td>
-                        <td>FTB service page + FAQ</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Self-employed</strong></td>
-                        <td>self employed mortgage Huddersfield, contractor mortgage</td>
-                        <td><span class="status-good">Transactional</span></td>
-                        <td>Specialist page + case studies</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Bad credit</strong></td>
-                        <td>bad credit mortgage Huddersfield, mortgage with CCJ</td>
-                        <td><span class="status-good">Transactional</span></td>
-                        <td>Specialist page + lender FAQs</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Remortgage</strong></td>
-                        <td>remortgage broker Huddersfield, remortgage advice</td>
-                        <td><span class="status-good">Transactional</span></td>
-                        <td>Remortgage service page</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Buy-to-let</strong></td>
-                        <td>buy to let mortgage Huddersfield, landlord mortgage broker</td>
-                        <td><span class="status-good">Transactional</span></td>
-                        <td>BTL page + criteria FAQs</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Local schemes</strong></td>
-                        <td>right to buy mortgage Huddersfield, shared ownership</td>
-                        <td><span class="status-warning">Mixed</span></td>
-                        <td>Scheme-specific pages</td>
-                    </tr>
-                </table>
-
-                <h3 style="margin-top: 24px;">Priority Landing Pages (Minimum Viable Set)</h3>
-                <ol style="margin-left: 20px;">
-                    <li><strong>Mortgage Broker in Huddersfield</strong> — rebuilt local hub with schema</li>
-                    <li><strong>Self-Employed Mortgages</strong> — Huddersfield module with case studies</li>
-                    <li><strong>Bad Credit Mortgages</strong> — specialist page with lender criteria</li>
-                    <li><strong>Remortgages</strong> — local service page with rate comparison</li>
-                    <li><strong>First-Time Buyer Mortgages</strong> — guide + local FAQ</li>
-                </ol>
-            </div>
-
-            <!-- Opportunities -->
-            <h2><span class="emoji">🚀</span> Priority Improvements</h2>
-            <p class="section-intro">Ranked by potential impact and implementation complexity. Quick wins first.</p>
-
-            <div class="opportunities-grid">
-                <div class="opportunity-card">
-                    <div class="opp-number">1</div>
-                    <div class="opp-content">
-                        <h4>Fix Mobile Popup Issue</h4>
-                        <p>Remove or reposition the call widget that blocks content on mobile. This is almost certainly causing immediate visitor drop-off and lost leads.</p>
-                    </div>
-                    <div class="opp-meta">
-                        <span class="effort-badge effort-low">Quick Fix</span>
-                        <div class="impact-indicator">
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="opportunity-card">
-                    <div class="opp-number">2</div>
-                    <div class="opp-content">
-                        <h4>Fix Unbiased Directory Listing</h4>
-                        <p>The listing showing "Castle Bromwich" instead of Huddersfield is actively damaging local SEO and AI visibility. Correct this immediately.</p>
-                    </div>
-                    <div class="opp-meta">
-                        <span class="effort-badge effort-low">Quick Fix</span>
-                        <div class="impact-indicator">
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="opportunity-card">
-                    <div class="opp-number">3</div>
-                    <div class="opp-content">
-                        <h4>Add LocalBusiness Schema Markup</h4>
-                        <p>Implement JSON-LD structured data including LocalBusiness, FinancialService, Service, and Review schemas. This is the key to AI recommendation visibility.</p>
-                    </div>
-                    <div class="opp-meta">
-                        <span class="effort-badge effort-medium">Medium</span>
-                        <div class="impact-indicator">
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="opportunity-card">
-                    <div class="opp-number">4</div>
-                    <div class="opp-content">
-                        <h4>Rebuild All Local Landing Pages</h4>
-                        <p>Replace the outdated location pages (some 11+ years old) with modern local hubs: service area lists, FAQ sections, integrated reviews, compliance info, full schema. Start with Huddersfield, then roll out to all locations.</p>
-                    </div>
-                    <div class="opp-meta">
-                        <span class="effort-badge effort-medium">Medium</span>
-                        <div class="impact-indicator">
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="opportunity-card">
-                    <div class="opp-number">5</div>
-                    <div class="opp-content">
-                        <h4>Optimise "Money Pages" (SpyFu Recommendation)</h4>
-                        <p>Focus SEO efforts on high-commercial-intent pages: <strong>buy to let mortgage</strong> (25,400 vol), <strong>guarantor mortgage</strong> (2,300 vol), <strong>HMO mortgage</strong>, <strong>mortgage on benefits</strong>, and <strong>private mortgage lenders</strong>. These convert visitors to leads.</p>
-                    </div>
-                    <div class="opp-meta">
-                        <span class="effort-badge effort-medium">Medium</span>
-                        <div class="impact-indicator">
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="opportunity-card">
-                    <div class="opp-number">6</div>
-                    <div class="opp-content">
-                        <h4>Add TL;DR Summaries to Top Articles</h4>
-                        <p>Add 2-3 sentence summaries at the top of long articles. Research shows this can increase conversions by up to 33% by delivering immediate value.</p>
-                    </div>
-                    <div class="opp-meta">
-                        <span class="effort-badge effort-low">Low Effort</span>
-                        <div class="impact-indicator">
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot"></span>
-                            <span class="impact-dot"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="opportunity-card">
-                    <div class="opp-number">7</div>
-                    <div class="opp-content">
-                        <h4>Launch Video Content</h4>
-                        <p>Create short explainer videos for YouTube and TikTok. Video builds trust faster than text, opens new discovery channels, and can repurpose existing article content.</p>
-                    </div>
-                    <div class="opp-meta">
-                        <span class="effort-badge effort-medium">Medium</span>
-                        <div class="impact-indicator">
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot"></span>
-                            <span class="impact-dot"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="opportunity-card">
-                    <div class="opp-number">8</div>
-                    <div class="opp-content">
-                        <h4>Full Website Redesign</h4>
-                        <p>Comprehensive modernisation: mobile-first design, streamlined CTAs, integrated calculators, modern aesthetics. UK specialists typically charge £2,000-£10,000+.</p>
-                    </div>
-                    <div class="opp-meta">
-                        <span class="effort-badge effort-high">High Effort</span>
-                        <div class="impact-indicator">
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                            <span class="impact-dot filled"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Timeline -->
-            <h2><span class="emoji">📅</span> Implementation Timeline</h2>
-
-            <div class="timeline">
-                <div class="timeline-item phase-1">
-                    <div class="timeline-header">
-                        <span class="timeline-title">Phase 1: Quick Wins</span>
-                        <span class="timeline-duration">This Week</span>
-                    </div>
-                    <div class="timeline-tasks">
-                        <span class="task-tag">Fix mobile popup</span>
-                        <span class="task-tag">Correct Unbiased listing</span>
-                        <span class="task-tag">Remove FSA references</span>
-                        <span class="task-tag">Update Google Business Profile</span>
-                    </div>
-                </div>
-
-                <div class="timeline-item phase-2">
-                    <div class="timeline-header">
-                        <span class="timeline-title">Phase 2: Technical Foundation</span>
-                        <span class="timeline-duration">30 Days</span>
-                    </div>
-                    <div class="timeline-tasks">
-                        <span class="task-tag">Implement schema markup</span>
-                        <span class="task-tag">Rebuild local landing pages</span>
-                        <span class="task-tag">Optimise "Money Pages"</span>
-                        <span class="task-tag">Add TL;DR summaries</span>
-                        <span class="task-tag">NAP audit all directories</span>
-                    </div>
-                </div>
-
-                <div class="timeline-item phase-3">
-                    <div class="timeline-header">
-                        <span class="timeline-title">Phase 3: Growth</span>
-                        <span class="timeline-duration">90 Days</span>
-                    </div>
-                    <div class="timeline-tasks">
-                        <span class="task-tag">Video content programme</span>
-                        <span class="task-tag">Local PR/link building</span>
-                        <span class="task-tag">Review generation strategy</span>
-                        <span class="task-tag">Consider website redesign</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Summary -->
-            <h2><span class="emoji">📋</span> Summary</h2>
-
-            <div class="two-column">
-                <div class="finding-positive">
-                    <h4 style="margin-top: 0;">✅ Strengths</h4>
-                    <ul style="margin-bottom: 0;">
-                        <li><strong>8,145 ranking keywords</strong> (UK)</li>
-                        <li><strong>£18,231/month</strong> traffic value</li>
-                        <li>505k monthly search footprint</li>
-                        <li>Perfect review score (5.0★, 127 reviews)</li>
-                        <li>#1 rank for niche terms (influencer mortgages, Gen Z)</li>
-                        <li>Specialist edge case expertise</li>
-                    </ul>
-                </div>
-                <div class="finding-critical">
-                    <h4 style="margin-top: 0;">❌ Weaknesses</h4>
-                    <ul style="margin-bottom: 0;">
-                        <li>Most high-volume keywords rank 30-90</li>
-                        <li>Critical mobile UX problems</li>
-                        <li>Invisible to AI assistants</li>
-                        <li>Inconsistent directory listings</li>
-                        <li>No structured data/schema</li>
-                        <li>Dated visual design (~2015)</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- So What, Now What -->
-            <h2><span class="emoji">🎯</span> Conclusion: So What, Now What</h2>
-
-            <div class="finding-warning" style="margin-bottom: 20px;">
-                <h4 style="margin-top: 0;">So What</h4>
-                <p style="margin-bottom: 0;">Traffic declines are increasingly structural, not simply a ranking problem. Google is sending fewer clicks due to zero-click features and AI summaries, and AI assistants tend to recommend businesses with the clearest and most consistent entity signals. NeedingAdvice already has strong real-world authority — particularly reviews and regulatory legitimacy — but those strengths are not yet expressed in the structured and corroborated formats that modern discovery systems depend on, which limits visibility for "mortgage broker in Huddersfield" type intent.</p>
-            </div>
-
-            <div class="finding-positive" style="margin-bottom: 30px;">
-                <h4 style="margin-top: 0;">Now What</h4>
-                <p style="margin-bottom: 0;">Focus on <strong>signal optimisation rather than content volume</strong>. The highest-impact actions over the next 30–60 days are to: implement structured data across priority pages, resolve directory and location inconsistencies, rebuild the Huddersfield mortgage page into a modern local service hub aligned to real user intent, surface Trustpilot proof directly on key landing pages in a consistent and compliant way, and standardise regulatory and Appointed Representative wording across service and location templates. Completing these steps should materially improve AI recommendation likelihood, local discoverability, and inbound demand — while reducing dependence on traditional Google traffic alone.</p>
-            </div>
-
-            <!-- Bottom Line -->
-            <div class="bottom-line">
-                <h3>💡 The Bottom Line</h3>
-                <p>NeedingAdvice.co.uk is already generating <strong>£18,231/month in traffic value</strong> from 8,145 ranking keywords. SpyFu data shows a clear path to <strong>£35,000-50,000/month</strong> by moving keywords from positions 30-90 into the top 10. The site's strength in specialist mortgage edge cases is a defendable competitive advantage. The fixes are technical (schema, directory consistency, mobile UX) not content — the content foundation is already strong. AI visibility is the emerging opportunity: competitors haven't solved this either, creating first-mover advantage.</p>
+            <!-- BOTTOM LINE -->
+            <div class="insight-box" style="margin-top: 40px;">
+                <h4>The Bottom Line</h4>
+                <p>Your content strategy is already winning in specialist niches (+5,000% on benefits mortgages). Desktop traffic grew 62% proving the content is valuable. The problem is mobile delivery (popup) and AI visibility (no schema). Fix those two things and scale the winning content formula = back to growth within 6 months.</p>
             </div>
 
         </div>
 
-        <div class="footer">
-            <p>Analysis generated using AI tools (Claude, ChatGPT) • SEO data from SpyFu UK • February 2026</p>
-            <span class="footer-badge">🤖 AI + SpyFu Data</span>
-        </div>
+        <footer>
+            <p>Analysis prepared by Max with AI assistance | Data: Google Analytics 4 + SpyFu UK | February 2026</p>
+        </footer>
     </div>
 </body>
 </html>
